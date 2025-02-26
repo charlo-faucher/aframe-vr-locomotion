@@ -1,0 +1,12 @@
+{
+  "name": "aframe-vr-locomotion",
+  "version": "0.0.0",
+  "description": "TODO",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

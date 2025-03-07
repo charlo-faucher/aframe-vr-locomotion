@@ -2,11 +2,24 @@
   "name": "aframe-vr-locomotion",
   "version": "0.0.0",
   "description": "TODO",
-  "license": "ISC",
-  "author": "",
-  "type": "commonjs",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  }
+    "build": "npm run build-barrels && npm run clean && tsc",
+    "clean": "rm -rf dist",
+    "build-barrels": "barrelsby --config barrelsby.json",
+    "watch-barrels": "chokidar \"src/**/*.ts\" -i \"src/index.ts\" -c \"npm run build-barrels\"",
+    "watch": "concurrently \"npm run watch-barrels\" \"tsc -w\""
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "barrelsby": "^2.8.1",
+    "chokidar": "^4.0.3",
+    "chokidar-cli": "^3.0.0",
+    "concurrently": "^9.1.2",
+    "typescript": "^5.8.2"
+  },
+  "author": "Charles-Olivier Faucher"
 }
